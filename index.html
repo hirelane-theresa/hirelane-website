@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hirelane Network</title>
+  <meta name="description" content="Hirelane Network connects talent to opportunity by helping recruiters discover job-ready candidates faster and helping professionals get seen." />
+  <style>
+    :root {
+      --blue: #0d66c2;
+      --blue-dark: #0a4e95;
+      --ink: #2f3542;
+      --slate: #5f6675;
+      --light: #f5f8fc;
+      --white: #ffffff;
+      --border: #dce5ef;
+      --shadow: 0 18px 40px rgba(15, 40, 80, 0.08);
+      --radius: 20px;
+      --max: 1140px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f8fbff 0%, #ffffff 40%);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(220, 229, 239, 0.8);
+      z-index: 10;
+    }
+
+    .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.site-logo {
+  height: 120px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--slate);
+  font-weight: 600;
+}
+
+@media (max-width: 920px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    width: 100%;
+  }
+
+  .site-logo {
+    height: 58px;
+  }
+}
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      color: #ffffff !important;
+    }
+
+    .btn-primary:hover { background: var(--blue-dark); }
+
+    .btn-secondary {
+      border-color: var(--border);
+      background: var(--white);
+      color: var(--ink);
+    }
+
+    .hero {
+      padding: 72px 0 48px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #eaf4ff;
+      color: var(--blue);
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      margin: 0 0 16px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--slate);
+      max-width: 650px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      color: var(--slate);
+      font-weight: 600;
+    }
+
+    .hero-points span {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 999px;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      font-size: 1.25rem;
+    }
+
+    .card-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .mini-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      background: #fbfdff;
+    }
+
+    section {
+      padding: 34px 0;
+    }
+
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 24px;
+    }
+
+    .section-head p {
+      color: var(--slate);
+      margin: 0;
+    }
+
+    .grid-2, .grid-3 {
+      display: grid;
+      gap: 22px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .panel {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel p { color: var(--slate); }
+
+    ul.clean {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    ul.clean li::before {
+      content: "✓";
+      color: var(--blue);
+      font-weight: 800;
+      margin-right: 10px;
+    }
+
+    .service-tag {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #eef6ff;
+      color: var(--blue-dark);
+      font-weight: 700;
+      margin: 6px 8px 0 0;
+    }
+
+    .cta {
+      padding: 56px 0 72px;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--ink), #465065);
+      color: var(--white);
+      border-radius: 28px;
+      padding: 38px;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box p {
+      color: rgba(255,255,255,0.86);
+      max-width: 700px;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .cta-box .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.35);
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0 40px;
+      color: var(--slate);
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 44px;
+      }
+
+      h1 {
+        font-size: 2.35rem;
+      }
+
+      .panel,
+      .hero-card,
+      .cta-box {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <img src="logo.png" alt="Hirelane Logo" class="site-logo">
+      </a>
+
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#for-who">Who We Help</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="https://forms.gle/ZadMwM9BiftKGWdNA" target="_blank" rel="noreferrer">Apply Now</a>
+      </nav>
+      </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Connecting Talent to Opportunity</div>
+          <h1>Helping recruiters find job-ready talent faster.</h1>
+          <p>
+            Hirelane Network helps recruiters discover qualified candidates and helps skilled professionals get seen,
+            showcased, and connected to real opportunities.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://forms.gle/ZadMwM9BiftKGWdNA" target="_blank" rel="noreferrer">Get Discovered</a>
+            <a class="btn btn-secondary" href="mailto:hirelanenetwork@gmail.com">Contact Us</a>
+          </div>
+          <div class="hero-points">
+            <span>Recruiter-friendly</span>
+            <span>Career-focused</span>
+            <span>Free talent application</span>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h3>Why Hirelane Network?</h3>
+          <p>
+            We bridge the gap between talent and hiring teams by highlighting skills, experience, strengths, and readiness.
+          </p>
+          <div class="card-list">
+            <div class="mini-card">
+              <strong>For professionals</strong>
+              <div>Build visibility and stand out to recruiters.</div>
+            </div>
+            <div class="mini-card">
+              <strong>For recruiters</strong>
+              <div>Discover talent faster with less guesswork.</div>
+            </div>
+            <div class="mini-card">
+              <strong>For growth</strong>
+              <div>Support career readiness through coaching and guidance.</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>About Hirelane Network</h2>
+          <p>
+            Hirelane Network helps recruiters find job-ready candidates and helps skilled professionals get discovered faster.
+            We spotlight talent across industries by showcasing skills, experience, location, and strengths.
+          </p>
+        </div>
+        <div class="grid-2">
+          <div class="panel">
+            <h3>Our mission</h3>
+            <p>
+              To create clearer pathways between capable professionals and the organizations looking for them.
+            </p>
+          </div>
+          <div class="panel">
+            <h3>What makes us different</h3>
+            <p>
+              We focus on visibility, readiness, and connection — helping talent present their value while helping recruiters save time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="for-who">
+      <div class="container">
+        <div class="section-head">
+          <h2>Who we help</h2>
+          <p>Hirelane Network serves both sides of the hiring journey.</p>
+        </div>
+        <div class="grid-2">
+          <div class="panel">
+            <h3>For job seekers</h3>
+            <ul class="clean">
+              <li>Gain visibility with recruiters</li>
+              <li>Showcase skills, strengths, and experience</li>
+              <li>Access support for resumes, interviews, and career growth</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>For recruiters</h3>
+            <ul class="clean">
+              <li>Discover job-ready candidates faster</li>
+              <li>Connect with curated talent</li>
+              <li>Reduce friction in the hiring process</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Services</h2>
+          <p>
+            We offer practical support that helps professionals become more market-ready and helps organizations connect with better-fit talent.
+          </p>
+        </div>
+        <div class="panel">
+          <span class="service-tag">HR Consulting</span>
+          <span class="service-tag">Career Development Coaching</span>
+          <span class="service-tag">Interview Preparation</span>
+          <span class="service-tag">Resume Review</span>
+          <span class="service-tag">Resume Writing</span>
+          <span class="service-tag">Social Media Marketing</span>
+          <span class="service-tag">Growth Marketing</span>
+          <span class="service-tag">Advertising</span>
+          <span class="service-tag">Blogging</span>
+          <span class="service-tag">Non-profit Consulting</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Ready to get discovered or find talent?</h2>
+          <p>
+            Whether you are a professional looking for visibility or a recruiter looking for stronger candidates,
+            Hirelane Network is here to help you connect faster.
+          </p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="https://forms.gle/ZadMwM9BiftKGWdNA" target="_blank" rel="noreferrer">Apply Now</a>
+            <a class="btn btn-secondary" href="mailto:hirelanenetwork@gmail.com">hirelanenetwork@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>
+        <strong>Hirelane Network</strong><br />
+        Connecting Talent to Opportunity
+      </div>
+      <div>
+        Contact: <a href="mailto:hirelanenetwork@gmail.com">hirelanenetwork@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
+
